@@ -4,6 +4,167 @@
 @import 'global';
 
 
+.header{
+  padding: 40px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
+.menu {
+  &__list {
+    display: flex;
+  }
+  &__list-item{
+    text-transform: uppercase;
+  }
+  &__list-item + .menu__list-item{
+    padding-left: 35px;
+  }
+  &__list-link {
+    color: $title;
+    padding-bottom: 1px;
+    transition: all .3s ease;
+    @extend %quicksand-400;
+    &:hover {
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      @extend %quicksand-500;
+    }
+  }
+  &__list-link--active {
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    @extend %quicksand-500;
+  }
+}
+
+
+.user-nav {
+  display: flex;
+  &__link {
+    position: relative;
+  }
+  &__link:not(:last-child){
+    margin-right: 25px;
+  }
+  &__num{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    top: -9px;
+    right: -14px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+
+.footer {
+  background-color: $bg;
+}
+
+.footer-top {
+  padding: 74px 0 40px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  &__contact {
+    width: 250px;
+    margin-right: 50px;
+  }
+  &__nav {
+    width: 170px;
+    margin-right: 30px;
+  }
+  &__item-form {
+    max-width: 470px;
+    width: 100%;
+  }
+  &__logo {
+    margin-bottom: 33px;
+    display: block ;
+  }
+  &__link {
+    margin-bottom: 10px;
+    display: block;
+  }
+  &__adress,
+  &__email,
+  &__phone {
+    display: block;
+    margin-bottom: 10px;
+  }
+  &__social-list {
+    display: flex;
+    align-items: center;
+    margin-top: 22px;
+  }
+  &__social-link {
+    display: inline-block;
+    padding: 8px 15px;
+  }
+  &__social-link {
+    path {
+      fill: $default;
+      transition: all 0.3s;
+    }
+    &:hover {
+      path {
+        fill: $accent;
+      }
+    }
+  }
+  &__social-item:first-child .footer-top__social-link {
+    padding-left: 0;
+  }
+  &__title {
+    color: $title;
+    @extend %roboto-400;
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1;
+  }
+  &__text {
+    margin-bottom: 25px;
+  }
+  &__form-input {
+    background-color: #ffffff;
+    max-width: 320px;
+    width: 100%;
+    padding: 12px 10px 12px 15px;
+    border: none;
+    box-shadow: 0 7px 20px 0 rgba(192, 192, 192, 0.3);
+    &::placeholder {
+      color: $default;
+      font-size: 16px;
+    }
+  }
+  &__form-btn {
+    padding: 12px 18px;
+    color: #ffffff;
+    background-color: $accent;
+    border: none;
+    text-transform: uppercase;
+    box-shadow: 0 7px 20px 0 rgba(255, 17, 48, 0.3);
+  }
+}
+
+.footer-bottom {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  &__accept-img {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 25px;
+  }
+}
 
 @import 'media';
